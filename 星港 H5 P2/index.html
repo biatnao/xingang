@@ -13,6 +13,12 @@
         margin: 0px;
         padding: 0px;
     }
+    .bg{
+        position:absolute; 
+        width:100%; 
+        height:100%; 
+        z-index:-1
+    }
     .box{
         position: fixed;
         top: 10%;
@@ -34,46 +40,93 @@
         right: 8%;
         width: 30%;
     }
-    #div1 {
+    .instruct_title{
+        height: 30px;
+    }
+    .close{
+        width: 30px;
+        height: 30px;
+        float: right;
+        background:url('close.png');
+        background-size:100%;
+        filter:alpha(Opacity=60);
+        -moz-opacity:0.6;
+        opacity: 0.6; 
+    }
+    .instruct_content{
+        padding: 5px 20px;
+        margin-top: 10px;
+    }
+    p{
+        margin: 5px 8px;
+        
+        color: #fff;
+    }
+    .title{
+        line-height: 28px;
+        font-size: 20px;
+    }
+    .door-bao{
         position: absolute;
-        left: 16%;
+        top: 66%;
+        left: 24%;
+    }
+    .door-bao img{
+        width: 35px;
+        height: 35px;
+    }
+    #instruct_info {
+        position: absolute;
+        left: 13%;
         top: 10%;
-        width: 66%;
-        height: 60%;
+        width: 74%;
+        height: 65%;
         z-index: 1;
-        border: solid #7A7A7A 4px;
-        background-color: 
+        border-radius: 5%;
+        background-color: #62308F;
     }
     </style>
 </head>
 <body>
-    <div id="Layer1" style="position:absolute; width:100%; height:100%; z-index:-1">    
+    <div id="Layer1" class="bg">    
     <img src="index-bk.png" height="100%" width="100%"/>    
     </div>
+    <div class="door-bao">
+        <img src="02.png" height="10px" width="10px"/>
+    </div>
     <div class="box">
-        <div class="btn" id="span1">
+        <div class="btn" id="record">
         <img style="width:100%;" src="history.png">
         </div>
-        <div class="btn">
+        <div class="btn" id="instruct">
         <img style="width:100%;" src="instruct.png">
         </div>
     </div>
+    
     <div class="welcome">
         <img style="width:100%;" src="welcome.png">
     </div>
-    <div id="div1">
-       <div align="right" style="background-color:#CDCDCD;"><span id="span2" style="cursor:pointer">关闭</span>
+    <div id="instruct_info">
+       <div class="instruct_title" >
+       <div id="instruct_close" class="close"></div>
+       </div>
+       <div class="instruct_content" >
+           <p class="title">一、活动介绍</p>
+           <p>1、活动前</p>
+           <p>&nbsp;</p>
+           <p class="title">二、活动介绍</p>
+           <p>1、活动前</p>
        </div>
     </div>
     <script src="jquery.min.js"></script>
     <script type="text/javascript">
         $(function(){
-            $("#div1").hide(); //先让div隐藏
-            $("#span1").click(function(){
-                $("#div1").fadeIn("slow");//淡入淡出效果 显示div
+            $("#instruct_info").hide(); //先让div隐藏
+            $("#instruct").click(function(){
+                $("#instruct_info").fadeIn("slow");//淡入淡出效果 显示div
             });
-            $("#span2").click(function(){
-                $("#div1").fadeOut("slow");//淡入淡出效果 隐藏div
+            $("#instruct_close").click(function(){
+                $("#instruct_info").fadeOut("slow");//淡入淡出效果 隐藏div
             })
 
         });
