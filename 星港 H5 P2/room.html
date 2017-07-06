@@ -55,11 +55,75 @@
     }
     .l-d-c{
         position: absolute;
-        top: 55%;
-        left: 80%;
-        width: 35px;
-        height: 40%;
+        top: 58%;
+        left: 88%;
+        width: 15%;
+        height: 30%;
     }
+    .l-m-d{
+        position: absolute;
+        top: 35%;
+        left: 125%;
+        width: 20%;
+        height: 12%;
+    }
+    .l-m-s{
+        position: absolute;
+        top: 62%;
+        left: 130%;
+        width: 18%;
+        height: 12%;
+    }
+    .m-u-h{
+        position: absolute;
+        top: 28%;
+        left: 206%;
+        width: 35px;
+        height: 35px;
+    }
+    .m-u-t{
+        position: absolute;
+        top: 5%;
+        left: 251%;
+        width: 70px;
+        height: 70px;
+    }
+    .m-m-d{
+        position: absolute;
+        top: 48%;
+        left: 242%;
+        width: 70px;
+        height: 70px;
+    }
+    .m-d-c{
+        position: absolute;
+        top: 80%;
+        left: 218%;
+        width: 35px;
+        height: 35px;
+    }
+    .m-d-z{
+        position: absolute;
+        top: 85%;
+        left: 258%;
+        width: 70px;
+        height: 50px;
+    }
+    .r-m-c{
+        position: absolute;
+        top: 25%;
+        left: 330%;
+        width: 15%;
+        height: 25%;
+    }
+    .r-m-z{
+        position: absolute;
+        top: 68%;
+        left: 362%;
+        width: 35px;
+        height: 70px;
+    }
+
     .instruct_title{
         height: 30px;
     }
@@ -79,7 +143,6 @@
     }
     p{
         margin: 5px 8px;
-        
         color: #fff;
     }
     .title{
@@ -96,6 +159,30 @@
         z-index: 1;
         border-radius: 5%;
         background-color: #62308F;
+    }
+    .chuangdian{
+        position: fixed;
+        left: 13%;
+        top: 20%;
+        width: 74%;
+        height: 50%;
+        display: none;
+    }
+    .chuangdian_close{
+        position: relative;
+        top: -100%;
+        left: 88%;
+        width: 40px;
+        height: 40px;
+    }
+    .hb_text{
+        position: relative;
+        top: -35%;
+        left: 42%;
+    }
+    .dollar{
+        font-size: 24px;
+        color: #DB483C;
     }
     </style>
 </head>
@@ -114,32 +201,43 @@
         <img style="width:100%;" src="images/instruct.png">
         </div>
     </div>
-    <div class="room-bao l-u-h">
+    <!-- 生态舒适s文案 -->
+    <div class="room-bao l-u-h" id="bao1">
     <img style="width:100%;" src="images/02.png">
     </div>
-    <div class="room-bao l-d-c">
+    <!-- 特价床垫文案 -->
+    <div class="room-bao l-d-c" id="bao2">
     </div>
-    <div class="room-bao l-m-d">
+    <!-- 地贴文案 -->
+    <div class="room-bao l-m-d" id="bao3">
     </div>
-    <div class="room-bao l-m-s">
+    <!-- 沙发枕头文案 -->
+    <div class="room-bao l-m-s" id="bao4">
     </div>
-
-    <div class="room-bao m-u-h">
+    <!-- 生态定制P床垫文案 -->
+    <div class="room-bao m-u-h" id="bao5">
+    <img style="width:100%;" src="images/02.png">
     </div>
-    <div class="room-bao m-u-t">
+    <!-- 台灯文案 -->
+    <div class="room-bao m-u-t" id="bao6">
     </div>
-    <div class="room-bao m-m-d">
+    <!-- 地贴文案 -->
+    <div class="room-bao m-m-d" id="bao7">
     </div>
+    <!-- 生态护脊床垫H文案 -->
     <div class="room-bao m-d-c">
     </div>
+    <!-- 枕头文案 -->
     <div class="room-bao m-d-z">
     </div>
-
+    <!-- 生态富养O2文案 -->
     <div class="room-bao r-m-c">
     </div>
+    <!-- 枕头文案 -->
     <div class="room-bao r-m-z">
     </div>
-    <div id="instruct_info">
+
+    <div id="instruct_info" style="display: none">
        <div class="instruct_title" >
        <div id="instruct_close" class="close"></div>
        </div>
@@ -151,7 +249,49 @@
            <p>1、活动前</p>
        </div>
     </div>
-    <script src="jquery.min.js"></script>
+    <!-- 床垫弹窗 -->
+    <div id="chuangdian_zj" class="chuangdian">
+        <img src="images/cd_zj.png" width="100%" /> 
+        <div class="chuangdian_close" id="chuangdian_zjclose"></div>
+    </div>
+
+    <div id="chuangdian_wzj" class="chuangdian">
+        <img src="images/cd_wzj.png" width="100%" /> 
+        <div class="chuangdian_close" id="chuangdian_wzjclose"></div>
+    </div>
+
+    <!-- 枕头弹窗 -->
+    <div id="zhentou_zj" class="chuangdian" style="top: 15%;">
+        <img src="images/zt_zj.png" width="100%" /> 
+        <div class="chuangdian_close" id="zhentou_zjclose" style="top: -130%;"></div>
+    </div>
+
+    <div id="zhentou_wzj" class="chuangdian">
+        <img src="images/zt_wzj.png" width="100%" /> 
+        <div class="chuangdian_close" id="zhentou_wzjclose"></div>
+    </div>
+
+    <!-- 红包弹窗 -->
+    <div id="hb_zj" class="chuangdian" style="top: 30%;">
+        <img src="images/hb_zj.png" width="100%"/> 
+        <div class='hb_text'>
+        <p class="dollar"><b style="font-size: 28px;">8</b>元</p>
+        </div>
+        <div class="chuangdian_close" id="hb_zjclose" style="top: -78%;left: 84%;"></div>
+    </div>
+
+    <div id="hb_wzj" class="chuangdian" style="top: 30%;">
+        <img src="images/hb_wzj.png" width="100%" /> 
+        <div class="chuangdian_close" id="hb_wzjclose" style="top: -65%;left: 84%;"></div>
+    </div>
+
+    <!-- 特价购买弹窗 -->
+    <div id="tj" class="chuangdian">
+        <img src="images/gm.png" width="100%" /> 
+        <div class="chuangdian_close" id="tj_close" style="top: -112%;left: 85%;"></div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
     <script type="text/javascript">
         $(function(){
             $("#instruct_info").hide(); //先让div隐藏
@@ -162,6 +302,68 @@
                 $("#instruct_info").fadeOut("slow");//淡入淡出效果 隐藏div
             })
 
+            //床垫中奖 start
+            $("#bao1").click(function(){
+                $("#chuangdian_zj").fadeIn("slow");//淡入淡出效果 显示div
+            });
+            $("#chuangdian_zjclose").click(function(){
+                $("#chuangdian_zj").fadeOut("slow");//淡入淡出效果 隐藏div
+            })
+            //床垫中奖 end
+            
+            //床垫未中奖 start
+            $("#bao2").click(function(){
+                $("#chuangdian_wzj").fadeIn("slow");//淡入淡出效果 显示div
+            });
+            $("#chuangdian_wzjclose").click(function(){
+                $("#chuangdian_wzj").fadeOut("slow");//淡入淡出效果 隐藏div
+            })
+            //床垫未中奖 end
+
+            //枕头中奖 start
+            $("#bao3").click(function(){
+                $("#zhentou_zj").fadeIn("slow");//淡入淡出效果 显示div
+            });
+            $("#zhentou_zjclose").click(function(){
+                $("#zhentou_zj").fadeOut("slow");//淡入淡出效果 隐藏div
+            })
+            //枕头中奖 end
+
+            //枕头未中奖 start
+            $("#bao4").click(function(){
+                $("#zhentou_wzj").fadeIn("slow");//淡入淡出效果 显示div
+            });
+            $("#zhentou_wzjclose").click(function(){
+                $("#zhentou_wzj").fadeOut("slow");//淡入淡出效果 隐藏div
+            })
+            //枕头未中奖 end
+
+            //红包中奖 start
+            $("#bao5").click(function(){
+                $("#hb_zj").fadeIn("slow");//淡入淡出效果 显示div
+            });
+            $("#hb_zjclose").click(function(){
+                $("#hb_zj").fadeOut("slow");//淡入淡出效果 隐藏div
+            })
+            //红包中奖 end
+
+            //红包未中奖 start
+            $("#bao6").click(function(){
+                $("#hb_wzj").fadeIn("slow");//淡入淡出效果 显示div
+            });
+            $("#hb_wzjclose").click(function(){
+                $("#hb_wzj").fadeOut("slow");//淡入淡出效果 隐藏div
+            })
+            //红包未中奖 end
+
+            //红包未中奖 start
+            $("#bao7").click(function(){
+                $("#tj").fadeIn("slow");//淡入淡出效果 显示div
+            });
+            $("#tj_close").click(function(){
+                $("#tj").fadeOut("slow");//淡入淡出效果 隐藏div
+            })
+            //红包未中奖 end
         });
     </script>
 </body>
